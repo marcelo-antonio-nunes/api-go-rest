@@ -14,7 +14,7 @@ func HandleResquest() {
 	r.HandleFunc("/", controllers.Home)
 	r.HandleFunc("/api/personalidade", controllers.TodasPersonalidades).Methods("Get")
 	r.HandleFunc("/api/personalidades/{id}", controllers.RetornaUmaPersonalidade).Methods("Get")
-	r.HandleFunc("/api/personalidades/x", controllers.CriaUmaNovaPersonalidade).Methods("Get")
+	r.HandleFunc("/api/personalidades", controllers.CriaUmaNovaPersonalidade).Methods("Post")
 
 	fmt.Println("Iniciando Servidor Rest com Go")
 	log.Fatal((http.ListenAndServe(":8080", r)))
